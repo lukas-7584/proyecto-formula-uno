@@ -1,0 +1,18 @@
+
+.padding{
+    padding: 2px;
+}
+.card {
+
+    height: auto !important;
+    width: '18rem' !important;
+    color : black;
+    overflow: hidden;
+    box-shadow: 0 2px 20px gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+}

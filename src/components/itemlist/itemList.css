@@ -1,0 +1,6 @@
+.EstItemList{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+    gap: 1rem;
+    justify-content: space-evenly;
+    margin: 30px;}
