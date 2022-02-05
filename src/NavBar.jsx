@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BsCart4 } from "react-icons/bs";
 import img from './LogoNavBar.jpg';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { cartContext } from "./context/CartProvider";
 
-export default function navBar (){
+export default function NavBar (){
+    const { sumarCantidad, cart } = useContext(cartContext);
+    const [cantidadTotal, setCantidadTotal] = useState(0);
+
+    useEffect(() => {
+        setCantidadTotal(sumarCantidad());
+    }, [cart])
+
+
     return(
         <>
                 <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark navega">
@@ -23,17 +32,8 @@ export default function navBar (){
                         <li className="nav-item">
                         <Link to={"/categoria/:categoriaId"} className="nav-link" href="#">PRODUCTOS</Link>
                         </li>
-                        {/* <li className="nav-item dropdown">
-                        <Link to={'/productos'} className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            PRODUCTOS
-                        </Link>
-                            <ul className="dropdown-menu subMenu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a className="dropdown-item" href="#">CASCOS</a></li>
-                                <li><a className="dropdown-item" href="#">AUTOS</a></li>
-                            </ul>
-                        </li> */}
                         <li className="nav-item">
-                        <Link to={'/carrito'} className="nav-link" href="#">< BsCart4 style={{ color:'white', marginLeft:'15px', fontSize:'35px'}} /></Link>
+                        <Link to={'/carrito'} className="nav-link" href="#">< BsCart4 style={{ color:'white', marginLeft:'15px', fontSize:'35px'} } />{cantidadTotal}</Link>
                         </li>
                         
                     </ul>

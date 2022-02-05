@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { cartContext } from '../../context/CartProvider';
 import CartItem from './CartItem';
 import { Button, Card } from 'react-bootstrap'
@@ -8,8 +8,17 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-        const {cart, clearCart} = useContext(cartContext);
+        const {cart, clearCart,  sumarTodo, sumarCantidad } = useContext(cartContext);
         // console.log(cart)
+
+        const [total, setTotal] = useState(0);
+        // const [cantidadTotal, setCantidadTotal] = useState(0);
+
+
+        useEffect(() => {
+                setTotal(sumarTodo());
+                // setCantidadTotal(sumarCantidad());
+        },[])
 
         return (
 
@@ -24,10 +33,18 @@ const Cart = () => {
                         <div>
                                 {cart.map(element => < CartItem key={element.item.id} prod={element}/> )}
 
-                                <Button variant="danger" onClick={() => clearCart()}>Limpiar Carrito</Button>
+                                <Button variant="danger" onClick={() => clearCart()}>Limpiar Carrito</Button><br /><br />
+
+                                <div><h2> Total a Pagar: ${total}</h2></div>
+                                {/* <h2> Cantidad total de Productos: {cantidadTotal}</h2> */}
                         </div>
+
+
+                                
+                                
                 }
 
+                        
                 </>
         )
 }

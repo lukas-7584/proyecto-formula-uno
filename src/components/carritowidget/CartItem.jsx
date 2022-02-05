@@ -20,17 +20,12 @@ const CartItem = ({prod}) => {
                                 <Card.Title className='padding'> Codigo N°: {prod.item.id}</Card.Title>
                                 <Card.Title className='padding'>Cantidad de Unidades: {prod.contador}</Card.Title>
                                 <Card.Title className='padding'>  {prod.item.precio}</Card.Title>
+                                <Card.Title className='padding'> Subtotal: $ {prod.item.precio * prod.contador}</Card.Title>
                                 <Button variant="danger" onClick={() => deleteItem(prod.item.id)}>Eliminar Producto</Button>
 
                 </Card.Body>
 
                     </Card>
-                            
-                {/* <h3>{prod.item.nombre}</h3>
-                <p>{prod.item.id}  </p>
-                <p> quantity:{prod.contador}</p>
-
-             */}
 
             </div>
 

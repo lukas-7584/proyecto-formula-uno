@@ -55,26 +55,7 @@ function App() {
       </CartProvider>
     </>
   );
-  // return (
-  //   <>
-
-  //   <div className="App">
-
-  //     <header className="App-header">
-        
-
-  //         <div className='App2'><NavBar /></div>
-
-  //           < ItemListContainer />
-
-  //     </header>
-      
-  //   </div>
-    
-  //   </>
-
-    
-  // );
+  
 }
 
 export default App;

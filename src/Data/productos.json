@@ -4,7 +4,7 @@
     "id":"001",
     "categoria":"CF",
     "nombre":"Casco de Fangio",
-    "precio":"$3500",
+    "precio":3500,
     "imagen":"/imagenes/fangio.jpg",
     "descripcion":"Casco a escala realizado en plastico de alta calida y con detalles que simulan al original"
 },
@@ -13,7 +13,7 @@
     "id":"002",
     "categoria":"CS",
     "nombre":"Casco de Sena",
-    "precio":"$2750",
+    "precio":2750,
     "imagen":"/imagenes/sena.jpg",
     "descripcion":"Casco a escala realizado en plastico de alta calida y con detalles que simulan al original"
 },
@@ -22,7 +22,7 @@
     "id":"003",
     "categoria":"CH",
     "nombre":"Casco de Lewis Hamilton",
-    "precio":"$3000",
+    "precio":3000,
     "imagen":"/imagenes/LH.jpg",
     "descripcion":"Casco a escala realizado en plastico de alta calida y con detalles que simulan al original"
 },
@@ -31,7 +31,7 @@
     "id":"004",
     "categoria":"CR",
     "nombre":"Casco de Reutemann",
-    "precio":"$4500",
+    "precio":4500,
     "imagen":"/imagenes/reutemann.jpg",
     "descripcion":"Casco a escala realizado en plastico de alta calida y con detalles que simulan al original"
 }
