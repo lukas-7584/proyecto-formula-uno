@@ -32,7 +32,7 @@ const CartProvider = ({children}) => {
         }
 
         const sumarTodo = () => {
-                return cart.reduce((a, b) => a + (b.item.precio * b.contador), 0);
+                return cart.map((item)=>item.item.precio*item.contador).reduce((a, b) => a + b, 0);
         }
 
         const sumarCantidad = () => {
