@@ -11,14 +11,14 @@ const Cart = () => {
         const {cart, clearCart,  sumarTodo, sumarCantidad } = useContext(cartContext);
         // console.log(cart)
 
-        // const [total, setTotal] = useState(0);
-        // // const [cantidadTotal, setCantidadTotal] = useState(0);
+        const [total, setTotal] = useState(0);
+        // const [cantidadTotal, setCantidadTotal] = useState(0);
 
 
-        // useEffect(() => {
-        //         setTotal(sumarTodo());
-        //         // setCantidadTotal(sumarCantidad());
-        // },[])
+        useEffect(() => {
+                setTotal(sumarTodo());
+                // setCantidadTotal(sumarCantidad());
+        },[cart])
 
         return (
 

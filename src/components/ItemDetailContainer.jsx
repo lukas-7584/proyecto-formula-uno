@@ -5,49 +5,40 @@ import ItemDetail from "./ItemDetail";
 import Loanding from "./loading/loading";
 
 
+import { getFirestore } from "../firebase/firebase";
 
-export default function ItemDetailContainer (){
+export default function ItemDetailContainer() {
+    const [producto, setProducto] = useState({});
+    const {id} = useParams()
     
-    const{id} = useParams ();
-
-    const [producto,setProducto] = useState({});
-
-    useEffect(()=>{
-        
-        const GetItem = new Promise((resolve, reject) =>{
-            setTimeout(()=>{
-            const res = data.filter((e)=>e.id===id)
-            resolve(res[0])
-            
-
-            // (listadoDeProductos.filter(item=>item.id==item)[0])
+    
 
 
-        },2000);
-        });
+    useEffect(() => {
+    const db = getFirestore();
+    const itemCollection = db.collection("productos")
+    //PONER ACA EL ID DE SU DOCUMENTO
+    const miItem = itemCollection.doc(id);
 
-        GetItem.then((res)=>{
-            setProducto(res)
-        })
-        GetItem.catch((err)=>{
-            setProducto((err))
-        })
-        // setTimeout(()=>{
-        //     const res = data.filter((e)=>e.id===id)
-        //     setProducto(res[0])
-            
+    miItem.get()
+        .then((doc) => {
+        /* console.log(doc.data());
+            console.log(doc.id);
+          console.log({ id: doc.id, ...doc.data() }); */
 
-        //     // (listadoDeProductos.filter(item=>item.id==item)[0])
+        if (!doc.exists) {
+            console.log("no existe ese documento");
+            return;
+        }
 
-
-        // },2000)
-    },[]);
-
-
+        console.log("item found");
+        setProducto({ id: doc.id, ...doc.data() });
+    })
+        .catch((err) => {
+        console.log(err);
+    });
+}, []);
 
     return <div className="EstItemList"> { (producto.id)?<ItemDetail  producto={producto}/>:<Loanding />}</div>;
 
-        
-        
-    
 }

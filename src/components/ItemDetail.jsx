@@ -5,13 +5,8 @@ import Counter from './contador/Contador';
 import  "./itemlist/itemList.css";
 import { cartContext } from "../context/CartProvider";
 
-
-
-
-
-
 export default function ItemDetail ({producto}){
-    // const { nombre, precio, descripcion, imagen, categoria,id } = producto
+
 
     const [mostrarContador, setMostrarContador] = useState(true);
 
@@ -29,24 +24,23 @@ export default function ItemDetail ({producto}){
         <Card className='Card'>
             <Card.Img variant="top" src={producto.imagen}/>
             <Card.Body>
-                <Card.Title className='padding'>{producto.nombre}</Card.Title>
+                <Card.Title className='padding'>{producto.title}</Card.Title>
                 <Card.Text className='padding'>
-                    {producto.precio}
+                        $ {producto.precio}
                 </Card.Text>
 
                 <Card.Text className='padding'>
-                    {producto.descripcion}
+                    {producto.descripción}
                 </Card.Text>
 
                 <Card.Text className='padding'> 
-                categoria:{producto.categoria}
+                categoria:{producto.categoría}
                 </Card.Text>
                 
                 <Card.Text className='padding'> 
                 codigo:{producto.id}
                 </Card.Text>
 
-                {/* <Button variant="danger">Comprar!</Button> */}
                 
             </Card.Body>
 
@@ -58,7 +52,6 @@ export default function ItemDetail ({producto}){
             }
             
         </Card>
-            {/* {producto.id + " " + producto.nombre + " " + producto.categoria} */}
     
         </>
     )
