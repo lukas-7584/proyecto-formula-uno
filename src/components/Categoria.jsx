@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, usuParams, useParams, Link} from 'react-r
 import data from'../Data/productos.json' 
 import ItemList from "./itemlist/ItemList";
 import ItemListContainer from "./itemListContainer/ItemListContainer";
+import { getFirestore } from "../firebase/firebase";
 
 
 export default function Categoria(){
@@ -12,14 +13,31 @@ export default function Categoria(){
     
     useEffect(()=>{
 
-        const productos = (data)
+        const db = getFirestore()
+        const itemCollection = db.collection("productos")
 
-        setCascos(productos.filter(item => item.categoria === categoriaId))
+        const miItem = itemCollection.doc(categoriaId)
+    
+        miItem.get()
+        .then((doc) => {
+        /* console.log(doc.data());
+            console.log(doc.id);
+          console.log({ id: doc.id, ...doc.data() }); */
 
-        // console.log(categoriaId)
+        if (!doc.exists) {
+            console.log("no existe ese documento");
+            return;
+        }
 
+        console.log("item found");
+        setCascos({ id: doc.id, ...doc.data() });
+    })
+        .catch((err) => {
+        console.log(err);
+    });
+    
 
-    },[categoriaId])
+    },[])
 
     return(
 
