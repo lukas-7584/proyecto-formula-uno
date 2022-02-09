@@ -16,28 +16,29 @@ export default function Categoria(){
         const db = getFirestore()
         const itemCollection = db.collection("productos")
 
-        const miItem = itemCollection.doc(categoriaId)
+        const miItem = itemCollection.where("categoría", "==", categoriaId)
     
         miItem.get()
-        .then((doc) => {
+        .then((snap) => {
         /* console.log(doc.data());
             console.log(doc.id);
           console.log({ id: doc.id, ...doc.data() }); */
 
-        if (!doc.exists) {
-            console.log("no existe ese documento");
-            return;
-        }
+        // if (!doc.exists) {
+        //     console.log("no existe ese documento");
+        //     return;
+        // }
 
-        console.log("item found");
-        setCascos({ id: doc.id, ...doc.data() });
+        console.log(snap.docs);
+        setCascos(snap.docs.map((doc)=>{return {id:doc.id,...doc.data()}}));
     })
         .catch((err) => {
         console.log(err);
     });
     
 
-    },[])
+    },[categoriaId])
+        console.log(cascos)
 
     return(
 
