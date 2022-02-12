@@ -1,9 +1,9 @@
 import React,{useState,useEffect, useContext} from "react"
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import { Button, Card } from 'react-bootstrap'
-import Counter from './contador/Contador';
-import  "./itemlist/itemList.css";
-import { cartContext } from "../context/CartProvider";
+import Counter from '../contador/Contador';
+import  "../itemlist/itemList.css";
+import { cartContext } from "../../context/CartProvider";
 
 export default function ItemDetail ({producto}){
 

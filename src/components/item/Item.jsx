@@ -1,9 +1,6 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap'
 import './item.css'
-import Counter from '../contador/Contador';
-import ItemDetailContainer from '../ItemDetailContainer';
-import ItemDetail from '../ItemDetail';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 

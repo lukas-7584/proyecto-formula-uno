@@ -1,9 +1,8 @@
 import React,{useState, useEffect} from "react";
 import { BrowserRouter, Switch, Route, usuParams, useParams, Link} from 'react-router-dom';
-import data from'../Data/productos.json' 
-import ItemList from "./itemlist/ItemList";
-import ItemListContainer from "./itemListContainer/ItemListContainer";
-import { getFirestore } from "../firebase/firebase";
+import ItemList from "../itemlist/ItemList";
+import ItemListContainer from "../itemListContainer/ItemListContainer";
+import { getFirestore } from "../../firebase/firebase";
 
 
 export default function Categoria(){

@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { BrowserRouter, Switch, Route, useParams } from 'react-router-dom';
-import data from'../Data/productos.json'
 import ItemDetail from "./ItemDetail";
-import Loanding from "./loading/loading";
+import Loanding from "../loading/loading";
 
 
-import { getFirestore } from "../firebase/firebase";
+import { getFirestore } from "../../firebase/firebase";
 
 export default function ItemDetailContainer() {
     const [producto, setProducto] = useState({});

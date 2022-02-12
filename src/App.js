@@ -1,11 +1,11 @@
 
 import './App.css';
-import NavBar from './NavBar'; 
+import NavBar from './components/NavBaryFooter/NavBar'
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Fo from './components/Fo';
-import ItemDetailContainer from './components/ItemDetailContainer';
-import Categoria from './components/Categoria';
+import Fo from './components/NavBaryFooter/Fo';
+import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
+import Categoria from './components/Categoria/Categoria';
 import Cart from './components/carritowidget/cart';
 import CartProvider from './context/CartProvider';
 

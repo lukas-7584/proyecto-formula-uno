@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { BsCart4 } from "react-icons/bs";
 import img from './LogoNavBar.jpg';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import { cartContext } from "./context/CartProvider";
+import { cartContext } from "../../context/CartProvider";
 
 export default function NavBar (){
     const { sumarCantidad, cart } = useContext(cartContext);
