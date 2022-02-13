@@ -3,6 +3,7 @@ import { cartContext } from '../../context/CartProvider';
 import CartItem from './CartItem';
 import { Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import OrdenCompra from './ordenDeCompra';
 
 
 
@@ -35,6 +36,7 @@ const Cart = () => {
                                 <div><h2> Total a Pagar: ${sumarTodo ()}</h2></div>
 
                                 <Button variant="danger" onClick={() => clearCart()}>Limpiar Carrito</Button><br /><br />
+                                <OrdenCompra/>
 
                                 {/* <h2> Cantidad total de Productos: {cantidadTotal}</h2> */}
                         </div>

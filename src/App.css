@@ -75,3 +75,56 @@
   text-align: center;
   
 }
+
+form h3{
+  color: red;
+  font-size: 3rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://realgaming101.es/wp-content/uploads/2020/10/F1-2020-Ventana-de-lanzamiento-parche-1.11-nuevos-cascos-y-todo-lo-anunciado-sobre-la-actualizaci%C3%B3n-de-rendimiento.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+form input{
+  margin: 8px;
+  border-radius: 5px;
+  color: white;
+  background-color: #818189;
+  border-color: red;
+  box-shadow: 5px 5px 5px white;
+}
+
+input::placeholder{
+  color: white;
+}
+
+form button{
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.footerReact{
+  display: flex;
+  background-color: black;
+  color: red;
+  width: 100%;
+  height: 20vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.felicita{
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
