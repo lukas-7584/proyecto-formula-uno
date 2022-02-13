@@ -1,4 +1,6 @@
 import React,{useState, useEffect,useRef,useContext} from "react";
+import { Button, Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 import firebase from "firebase";
 import { getFirestore } from "../../firebase/firebase";
 import { cartContext } from "../../context/CartProvider";
@@ -6,14 +8,18 @@ import { cartContext } from "../../context/CartProvider";
 export default function OrdenCompra() {
 
     const [orderId, setOrderId] = useState('');
-    const { sumarTodo, cart } = useContext(cartContext);
+    const { sumarTodo, cart, } = useContext(cartContext);
+    const [finalizarCompra, setFinalizarCompra] = useState(true)
 
     const nameRef = useRef();
     const addressRef = useRef();
-    const cityRef = useRef();
     const stateRef = useRef();
     const emailRef = useRef();
     const mobileRef = useRef();
+
+    function  graciasPorSuCompra(){
+        setFinalizarCompra(false)
+    }
 
     function handleClick() {
 
@@ -42,14 +48,18 @@ export default function OrdenCompra() {
                 console.log(err);
             });
 
+                
+                graciasPorSuCompra()
     }
 
     return (
 
         <>
-            {orderId && (<h1 className="felicita">Felicitaciones tu orden es {orderId}</h1>)}
 
-            <div >
+        {finalizarCompra ?
+
+
+            
                 <form onSubmit={(event) =>event.preventDefault()}> 
 
                 <h3>Ingresa tus datos</h3>
@@ -57,7 +67,7 @@ export default function OrdenCompra() {
                 <input type="text" name="name"  ref={nameRef} placeholder="Nombre y Apelllido" required />
                 <br />
 
-                <input type="text" name="mobile" ref={mobileRef} placeholder="Nro de Celular"  required/>
+                <input type="tel" name="número de teléfono" ref={mobileRef} placeholder="Ingrese su número de teléfono"  required/>
                 <br />
 
                 <input type="email" name="email" ref={emailRef} placeholder="Email" required />
@@ -72,8 +82,15 @@ export default function OrdenCompra() {
                 <button type="submit" onClick={() => handleClick() } >Finalizar Compra!!</button>
 
                 </form>
-            </div>
+
+                :
+                <div>
+                    <h4>Gracias por elegirnos !!! {orderId && (<h1 className="felicita">Felicitaciones tu orden es {orderId}</h1>)} </h4>
+
+                    <Link to='/'><Button variant="success">A seguir comprando!!</Button></Link>
+                </div>
             
+        }
         </>
     );
 }
