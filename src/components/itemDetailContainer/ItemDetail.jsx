@@ -1,6 +1,7 @@
 import React,{useState,useEffect, useContext} from "react"
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import { Button, Card } from 'react-bootstrap'
+import swal from 'sweetalert';
 import Counter from '../contador/Contador';
 import  "../itemlist/itemList.css";
 import { cartContext } from "../../context/CartProvider";
@@ -13,7 +14,7 @@ export default function ItemDetail ({producto}){
     const {addToCart} = useContext(cartContext);
 
     function onAdd(Contador){
-        alert("Se van agregar:  " + Contador + "  " + "productos");
+        swal("Se agregaron  " + Contador , "productos","success" );
         addToCart(producto, Contador);
         setMostrarContador(false);
     } 
