@@ -21,8 +21,9 @@ export default function OrdenCompra() {
         setFinalizarCompra(false)
     }
 
-    function handleClick() {
+    function handleSubmit(event) {
 
+        event.preventDefault();
         const db = getFirestore();
         const orders = db.collection("orders");
 
@@ -60,7 +61,7 @@ export default function OrdenCompra() {
 
 
             
-                <form onSubmit={(event) =>event.preventDefault()}> 
+                <form onSubmit={handleSubmit}> 
 
                 <h3>Ingresa tus datos</h3>
 
@@ -79,7 +80,7 @@ export default function OrdenCompra() {
                 <input type="text" name="address" ref={addressRef} placeholder="Direccion" required  />
                 <br />
 
-                <button type="submit" onClick={() => handleClick() } >Finalizar Compra!!</button>
+                <button type="submit" >Finalizar Compra!!</button>
 
                 </form>
 
