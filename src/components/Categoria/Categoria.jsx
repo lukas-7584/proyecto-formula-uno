@@ -19,14 +19,7 @@ export default function Categoria(){
     
         miItem.get()
         .then((snap) => {
-        /* console.log(doc.data());
-            console.log(doc.id);
-          console.log({ id: doc.id, ...doc.data() }); */
-
-        // if (!doc.exists) {
-        //     console.log("no existe ese documento");
-        //     return;
-        // }
+        
 
         console.log(snap.docs);
         setCascos(snap.docs.map((doc)=>{return {id:doc.id,...doc.data()}}));
@@ -62,16 +55,6 @@ export default function Categoria(){
             </div>
 
         </nav>
-        {/* <Link to={'/categoria/CF'}>casco de Fagio</Link> <br />
-        <Link to={'/categoria/CH'}> casco de Hamilton</Link> <br />
-        <Link to={'/categoria/CS'}> casco de Sena</Link><br />
-        <Link to ={'/categoria/CR'}> cascos de reuteman</Link><br /> */}
-        
-        {/* Estoy en la categoria {categoriaId} */}
-{/*         
-        {
-            cascos.map(item => <div>{item.nombre}</div>)
-        } */}
 
     
         <ItemListContainer/>

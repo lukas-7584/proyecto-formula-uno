@@ -21,9 +21,7 @@ export default function ItemDetailContainer() {
 
     miItem.get()
         .then((doc) => {
-        /* console.log(doc.data());
-            console.log(doc.id);
-          console.log({ id: doc.id, ...doc.data() }); */
+
 
         if (!doc.exists) {
             console.log("no existe ese documento");
