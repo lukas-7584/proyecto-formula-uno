@@ -46,5 +46,6 @@ npm start
 Para terminar el proceso en Windows presionar en la consola:
 ctrl + C
 
+## Deploy : https://fanmarket.netlify.app/
 
 **COPYRIGHT © 2022 JORGE LUCAS AMAYA**
