@@ -8,6 +8,7 @@ import ItemDetailContainer from './components/itemDetailContainer/ItemDetailCont
 import Categoria from './components/Categoria/Categoria';
 import Cart from './components/carritowidget/cart';
 import CartProvider from './context/CartProvider';
+import Nosotros from './components/NavBaryFooter/Nosotros';
 
 
 
@@ -40,7 +41,7 @@ function App() {
 
                 {/* ruta nosotros */}
                 <Route exact path="/nosotros">
-                  <div className='App-header'> una breve historia de donde venimos </div>
+                  <div className='App-header'> <Nosotros/> </div>
                 </Route>
 
 

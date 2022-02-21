@@ -10,15 +10,15 @@ import OrdenCompra from './ordenDeCompra';
 const Cart = () => {
 
         const {cart, clearCart,  sumarTodo, sumarCantidad } = useContext(cartContext);
-        // console.log(cart)
+        
 
         const [total, setTotal] = useState(0);
-        // const [cantidadTotal, setCantidadTotal] = useState(0);
+        
 
 
         useEffect(() => {
                 setTotal(sumarTodo());
-                // setCantidadTotal(sumarCantidad());
+                
         },[cart])
 
         return (
@@ -38,7 +38,7 @@ const Cart = () => {
                                 <Button variant="danger" onClick={() => clearCart()}>Limpiar Carrito</Button><br /><br />
                                 <OrdenCompra/>
 
-                                {/* <h2> Cantidad total de Productos: {cantidadTotal}</h2> */}
+                                
                         </div>
 
 
