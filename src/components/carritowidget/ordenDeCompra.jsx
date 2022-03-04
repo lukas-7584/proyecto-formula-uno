@@ -8,7 +8,7 @@ import { cartContext } from "../../context/CartProvider";
 export default function OrdenCompra() {
 
     const [orderId, setOrderId] = useState('');
-    const { sumarTodo, cart, } = useContext(cartContext);
+    const { sumarTodo, cart, clearCart} = useContext(cartContext);
     const [finalizarCompra, setFinalizarCompra] = useState(true)
 
     const nameRef = useRef();
@@ -88,7 +88,7 @@ export default function OrdenCompra() {
                 <div>
                     <h4>Gracias por elegirnos !!! {orderId && (<h1 className="felicita">Felicitaciones tu orden es {orderId}</h1>)} </h4>
 
-                    <Link to='/'><Button variant="success">A seguir comprando!!</Button></Link>
+                    <Link to='/'><Button variant="success"   onClick={() => clearCart()}>VOLVER AL INICIO</Button></Link>
                 </div>
             
         }
