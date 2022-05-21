@@ -19,8 +19,6 @@ Fan´s Market fue creado con la idea no solo ofrecerte los productos que todo fa
 
 **Se aclara que para Firebase utilizamos la versión " 8.8.0 " la utilización versión diferente no garantiza el correcto desempeño.**
 
-**react-router-dom:** Paquete utilizado para declarar rutas de navegación y tomar parámetros de las mismas.
-
 **En este caso utilizamos la versión "5.2.0" y de igual manera  se recomienda utilizar la misma para el correcto funcionamiento**
 
 **react-icons/bss:** Se utilizo (en su versión "4.3.1") para la creación del icono que muestra el  carrito.
